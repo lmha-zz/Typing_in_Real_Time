@@ -1,0 +1,19 @@
+1) have the node.js server render views/index.ejs that has the html content for hte client whenevr the client requests '/'
+
+2) in the client.ejs, have a javascript code that asks the user for their name. store the user input in a variable caleld name
+
+3) have the clietn emit to the server an event called 'got_a_new_user' and pass their 'name' to the server.
+
+4) have the server listen for an event caleld 'got_a_new_user'. when this event gets triggered, have the server emit an event called 'new_ser' to the client with the name of the new user attached to the event
+
+5) have the client listen for an event caleld 'new_user' and when this event gets triggered, have jquery render a new box with the new user's name
+
+6) when the client updates the text box in the html (say id of 'my_box'), have the client emit an event called 'udpated_text' to the server, and attach the value of my_box with the event
+
+7) have the server listen for an event called 'updated_text' and when this event gets triggered, broadcast to everyone (except the person who triggered the request) an event called 'text_update' (and attach the value of new text)
+
+8) have the clietn listen for an event called 'text_update' and when this event gets triggered, update the html text of the user that the text was updated for
+
+9) have the server listen for an event called 'disconnect' and when this event gets triggered, emit an event called 'disconnect_user' to the client
+
+10) need to have the client listen for an event called 'disconnect_user' and remove any html box associate with this user.
